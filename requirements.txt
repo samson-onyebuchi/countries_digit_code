@@ -38,6 +38,5 @@ faker>=8.0.0,<9.0.0
 google-auth==2.3.3
 google-auth-oauthlib==0.4.6
 pycountry==20.7.3
-pip install PyMuPDF
 pdfplumber==0.5.28
 phonenumbers==x.y.z
