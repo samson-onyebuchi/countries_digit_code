@@ -29,7 +29,7 @@ def generate_country_data():
 
     return sorted_countries
 
-@app.route('/countries', methods=['GET'])
+@app.route('/api/countries_phone_digit_code', methods=['GET'])
 def get_countries():
     sorted_countries = generate_country_data()
     return jsonify(sorted_countries)
