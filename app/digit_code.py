@@ -5,7 +5,7 @@ import phonenumbers
 app = Flask(__name__)
 
 def generate_country_data():
-    COUNTRY_DATA = {}
+    COUNTRY_DATA = []
 
     for country in pycountry.countries:
         country_code = country.alpha_2
@@ -22,10 +22,10 @@ def generate_country_data():
             except phonenumbers.phonenumberutil.Error:
                 pass
 
-        COUNTRY_DATA[country_code] = country_data
+        COUNTRY_DATA.append(country_data)
 
-    # Alphabetical sorting of the dictionary
-    sorted_countries = sorted(COUNTRY_DATA.items(), key=lambda x: x[1]['code'])
+    # Alphabetical sorting of the list of dictionaries
+    sorted_countries = sorted(COUNTRY_DATA, key=lambda x: x['code'])
 
     return sorted_countries
 
